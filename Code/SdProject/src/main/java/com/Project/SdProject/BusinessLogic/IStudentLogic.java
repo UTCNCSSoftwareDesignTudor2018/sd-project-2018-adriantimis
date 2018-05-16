@@ -1,11 +1,13 @@
 package com.Project.SdProject.BusinessLogic;
 
-import com.Project.SdProject.BusinessLogic.DataTransferObjects.LineDTO;
+import com.Project.SdProject.BusinessLogic.DataTransferObjects.LineInformationDTO;
+import com.Project.SdProject.BusinessLogic.DataTransferObjects.StudentDTO;
 
 public interface IStudentLogic {
 
-    void chooseLines(LineDTO line1, LineDTO line2);
-    void toggleAutomaticLineSelection();
+    void createStudent(StudentDTO studentDTO);
+    void chooseLines(LineInformationDTO lineInformationDTO);
+    void toggleAutomaticLineSelection(StudentDTO studentDTO);
 
 
 }
