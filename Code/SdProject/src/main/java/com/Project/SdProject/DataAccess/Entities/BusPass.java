@@ -2,6 +2,8 @@ package com.Project.SdProject.DataAccess.Entities;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class BusPass {
@@ -12,9 +14,32 @@ public class BusPass {
 
     private Date expirationDate;
 
+    @ManyToMany
+    @JoinTable(name = "bus_lines", joinColumns = {@JoinColumn(name = "fk_busPass")},
+    inverseJoinColumns = {@JoinColumn(name = "fk_line")})
+    private Set<Line> lines = new HashSet<>();
+
     @ManyToOne
     @JoinColumn(name = "fk_student")
     private Student student;
+
+    public void addBusLine(Line line){
+        this.lines.add(line);
+        line.getBusPasses().add(this);
+    }
+
+    public void removeBusLine(Line line){
+        this.lines.remove(line);
+        line.getBusPasses().remove(this);
+    }
+
+    public Set<Line> getLines() {
+        return lines;
+    }
+
+    public void setLines(Set<Line> lines) {
+        this.lines = lines;
+    }
 
     public int getId() {
         return id;
