@@ -4,6 +4,15 @@ public class UserDTO {
 
     private String username;
     private String password;
+    private int role;
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
 
     public String getUsername() {
         return username;

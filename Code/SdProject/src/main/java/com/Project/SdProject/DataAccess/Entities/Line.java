@@ -8,9 +8,6 @@ import java.util.Set;
 public class Line {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-
     private int lineNumber;
 
     @ManyToMany(mappedBy = "lines")
@@ -22,14 +19,6 @@ public class Line {
 
     public void setBusPasses(Set<BusPass> busPasses) {
         this.busPasses = busPasses;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getLineNumber() {

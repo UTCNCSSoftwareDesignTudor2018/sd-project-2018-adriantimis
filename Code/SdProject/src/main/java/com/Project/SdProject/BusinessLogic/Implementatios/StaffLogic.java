@@ -75,9 +75,9 @@ public class StaffLogic implements IStaffLogic {
     }
 
     @Override
-    public List<LineDTO> checkPassValidity(StudentDTO studentDTO) {
+    public List<LineDTO> checkPassValidity(String username){
 
-        Student student = studentRepository.findById(studentDTO.getId()).orElse(null);
+        Student student = studentRepository.findByUser_Username(username);
 
         if(student == null){
             return null;
@@ -100,6 +100,11 @@ public class StaffLogic implements IStaffLogic {
 
         return lineDTOS;
 
+    }
+
+    @Override
+    public StaffDTO get(String username) {
+        return dtoFactory.createDTO(staffRepository.findByUser_Username(username));
     }
 
 }

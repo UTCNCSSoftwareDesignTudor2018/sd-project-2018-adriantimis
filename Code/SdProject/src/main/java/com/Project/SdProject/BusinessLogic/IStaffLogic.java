@@ -10,6 +10,7 @@ public interface IStaffLogic {
 
     void createStaff(StaffDTO staffDTO);
     void generateNfcCard(StudentDTO studentDTO);
-    List<LineDTO> checkPassValidity(StudentDTO studentDTO);
+    List<LineDTO> checkPassValidity(String username);
+    StaffDTO get(String username);
 
 }

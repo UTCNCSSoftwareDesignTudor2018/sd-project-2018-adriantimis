@@ -4,7 +4,8 @@ import com.Project.SdProject.BusinessLogic.DataTransferObjects.UserDTO;
 
 public interface IUserLogic {
 
-    boolean register(UserDTO userDTO);
-    String login(UserDTO userDTO);
+    UserDTO register(UserDTO userDTO);
+    UserDTO login(UserDTO userDTO);
+    UserDTO getUser(String id);
 
 }

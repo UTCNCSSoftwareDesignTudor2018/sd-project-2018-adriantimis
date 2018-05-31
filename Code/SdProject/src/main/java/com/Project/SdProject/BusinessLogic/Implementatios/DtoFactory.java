@@ -25,7 +25,6 @@ public class DtoFactory {
 
         LineDTO lineDTO = new LineDTO();
 
-        lineDTO.setId(line.getId());
         lineDTO.setLineNumber(line.getLineNumber());
 
         return lineDTO;

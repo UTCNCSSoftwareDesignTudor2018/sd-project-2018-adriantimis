@@ -19,12 +19,12 @@ public class AuthenticationController {
     }
 
     @PostMapping(path = "/register")
-    public @ResponseBody boolean register(@RequestBody UserDTO userDTO){
+    public @ResponseBody UserDTO register(@RequestBody UserDTO userDTO){
         return userLogic.register(userDTO);
     }
 
     @PostMapping(path = "/login")
-    public @ResponseBody String login(@RequestBody UserDTO userDTO){
+    public @ResponseBody UserDTO login(@RequestBody UserDTO userDTO){
         return userLogic.login(userDTO);
     }
 

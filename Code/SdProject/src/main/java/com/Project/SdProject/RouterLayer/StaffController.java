@@ -36,10 +36,17 @@ public class StaffController {
 
     }
 
-    @PostMapping(path = "/checkPassValidity")
-    public @ResponseBody List<LineDTO> checkPassValidity(@RequestBody StudentDTO studentDTO){
+    @GetMapping(path = "/checkPassValidity")
+    public @ResponseBody List<LineDTO> checkPassValidity(@RequestParam String username){
 
-        return staffLogic.checkPassValidity(studentDTO);
+        return staffLogic.checkPassValidity(username);
+
+    }
+
+    @GetMapping(path = "/get")
+    public @ResponseBody StaffDTO get(@RequestParam String username){
+
+        return staffLogic.get(username);
 
     }
 
