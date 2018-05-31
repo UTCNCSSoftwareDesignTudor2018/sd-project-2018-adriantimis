@@ -2,27 +2,31 @@ Adrian Timis
 
 Architecture styles: Layered pattern + Client / Server
 
-Design patterns: - Singleton
+Design patterns: 
+
+                 - Singleton
 
                  - Observer
                  
-                 - Builder
+                 - Factory
                  
-                 - To be determined
                  
-Relationships: - Many to many - BusPass < - > Line
+Relationships: 
+
+              - Many to many - BusPass < - > Line
 
                               - Staff < - > StaffRole
                               
-               - Many to One - Student -> BusPass
+              - Many to One - Student -> BusPass
                
-Frameworks : - Spring
+Frameworks and Libraries : 
+
+             - Spring
 
              - Hibernate
              
-             - Room
-             
-             - Volley
+             - Retrofit
+            
              
 Maven + Gradle on Android app
 
